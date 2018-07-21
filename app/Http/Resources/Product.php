@@ -18,7 +18,11 @@ class Product extends JsonResource
             'id' => $this->id,
             'producer' => $this->producer,
             'harvested_at' => $this->harvested_at,
-            'transactions' => $this->transactions,
+            'transactions' => $this->transactions->each(function ($transaction) {
+                $transaction->sender;
+                $transaction->receiver;
+                $transaction->status;
+            }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
