@@ -30,4 +30,12 @@ class User extends Authenticatable
     public function products() {
         return $this->hasMany('App\Product');
     }
+
+    public function producer() {
+        return $this->hasOne('App\Producer');
+    }
+
+    public function distributor() {
+        return $this->hasOne('App\Distributor');
+    }
 }
