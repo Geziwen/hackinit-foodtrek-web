@@ -14,7 +14,7 @@ class ProducersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         foreach (range(1, 5) as $item) {
-            DB::table('distributors')->insert([
+            DB::table('producers')->insert([
                 'name' => $faker->name,
                 'logo' => $faker->imageUrl('100', '100'),
                 'location' => json_encode([
