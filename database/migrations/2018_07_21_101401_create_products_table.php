@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('type_id');
             $table->timestamp('harvested_at')->nullable();
             $table->timestamps();
         });
