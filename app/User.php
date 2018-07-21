@@ -38,4 +38,8 @@ class User extends Authenticatable
     public function distributor() {
         return $this->hasOne('App\Distributor');
     }
+
+    public function role() {
+        return $this->hasOne('Aoo\Role');
+    }
 }
