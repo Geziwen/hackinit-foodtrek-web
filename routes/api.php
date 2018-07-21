@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use App\Distributor;
 use App\Product;
+use App\Food;
+use App\Http\Resources\Food as FoodResource;
 use App\Http\Resources\Distributor as DistributorResource;
 use App\Http\Resources\Product as ProductResource;
 
@@ -55,4 +57,7 @@ Route::get('distributors', function () {
     return DistributorResource::collection(Distributor::all());
 });
 
+Route::get('foods', function () {
+    return FoodResource::collection(Food::all());
+});
 
