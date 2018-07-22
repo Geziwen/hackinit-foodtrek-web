@@ -95,6 +95,10 @@ Route::prefix('distributor/{distributor}')->group(function () {
 
 });
 
+Route::get('producer/{producer}', function ($id) {
+    return new DistributorResource(App\Producer::find($id));
+});
+
 Route::get('distributors', function () {
     return DistributorResource::collection(Distributor::all());
 });
