@@ -22,7 +22,13 @@ class Distributor extends JsonResource
             'address' => $this->latitude,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'transactions' => $this->transactions,
+            'transactions' => $this->transactions->each(function ($transaction) {
+                $transaction->sender;
+                $transaction->receiver;
+                $transaction->product;
+                $transaction->product->type;
+                $transaction->status;
+            }),
         ];
     }
 }

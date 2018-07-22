@@ -22,6 +22,8 @@ class Product extends JsonResource
                 $transaction->sender;
                 $transaction->receiver;
                 $transaction->status;
+                $transaction->sender->location;
+                $transaction->receiver->location;
             }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

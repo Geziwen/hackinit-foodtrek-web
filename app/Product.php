@@ -8,6 +8,10 @@ class Product extends Model
 {
     protected $table = "products";
 
+    public function type() {
+        return $this->belongsTo('App\Food', 'type_id');
+    }
+
     public function producer() {
         return $this->belongsTo('App\User', 'user_id');
     }

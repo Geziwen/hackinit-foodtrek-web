@@ -15,4 +15,8 @@ trait HasLocation {
     public function getAddressAttribute() {
         return json_decode($this->location)->address;
     }
+
+    public function getLocationInfoAttribute() {
+        return json_decode($this->location);
+    }
 }

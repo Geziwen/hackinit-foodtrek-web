@@ -104,11 +104,6 @@ Route::get('foods', function () {
 });
 
 Route::middleware('auth:api')->get('test', function() {
-//    if (Auth::guest()) {
-//        return 'guest';
-//    }
-//    return 'otherwise';
-
-    return Auth::user();
+    return Auth::guard('api')->user();
 });
 
